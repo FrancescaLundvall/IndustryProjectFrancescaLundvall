@@ -1,4 +1,4 @@
-package com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall;
+package com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.repository;
 
 import com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.entity.Course;
 import com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.entity.Staff;

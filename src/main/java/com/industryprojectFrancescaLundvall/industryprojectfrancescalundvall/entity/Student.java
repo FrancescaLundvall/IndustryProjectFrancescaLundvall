@@ -40,15 +40,9 @@ public class Student {
     private Long studentId;
     private String firstName;
     private String lastName;
-   /* @Column(
-            name="student_email_address",
-
-            //means that there must be an email value for every new student entry
-            nullable = false
-    )*/
     private String studentEmail;
-    private String DOB;
     private String address;
     private String contactNumber;
     private char gender;
+    private Long courseId;
 }

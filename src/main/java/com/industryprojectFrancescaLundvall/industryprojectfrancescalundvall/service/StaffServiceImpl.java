@@ -49,10 +49,6 @@ public class StaffServiceImpl implements StaffService{
             oldStaff.setLastName(staff.getLastName());
         }
 
-        if(Objects.nonNull(staff.getDOB()) && !"".equalsIgnoreCase(staff.getDOB())){
-            staff.setDOB(staff.getDOB());
-        }
-
         if(Objects.nonNull(staff.getAddress()) && !"".equalsIgnoreCase(staff.getAddress())){
             oldStaff.setAddress(staff.getAddress());
         }
@@ -69,7 +65,7 @@ public class StaffServiceImpl implements StaffService{
     }
 
     @Override
-    public Staff fetchStaffByFirstName(String firstName) {
-        return null;
+    public Staff findByFirstNameAndLastName(String firstName, String lastName) {
+        return staffRepository.findByFirstNameAndLastName(firstName, lastName);
     }
 }

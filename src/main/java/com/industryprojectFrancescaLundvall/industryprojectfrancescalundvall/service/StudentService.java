@@ -16,7 +16,9 @@ public interface StudentService {
 
     public Student updateStudent(Long studentID, Student student);
 
-    public Student fetchStudentByFirstName(String firstName);
+    public Student findByFirstName(String firstName);
 
+   // List<Student> findByCourseId(Long courseId);
 
+     Student findByFirstNameAndLastName(String firstName, String lastName);
 }

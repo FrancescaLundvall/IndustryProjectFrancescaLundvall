@@ -28,7 +28,9 @@ public class Module {
     @GeneratedValue
     private Long moduleId;
     private String moduleName;
-    //@Embedded
-    //private Staff staff;
     private int EctCredits;
+
+    private Long staffId;
+    private Long courseId;
+
 }

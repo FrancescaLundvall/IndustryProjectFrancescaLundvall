@@ -1,4 +1,4 @@
-package com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall;
+package com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.controller;
 
 import com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.controller.DepartmentController;
 import com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.entity.Department;
@@ -40,11 +40,12 @@ class DepartmentControllerTest {
         Mockito.when(departmentService.saveDepartment(inputDepartment)).thenReturn(department);
 
 
-        mockMvc.perform(post("/departments").contentType(MediaType.APPLICATION_JSON).content("{\n" +
+        mockMvc.perform(post("/saveDepartment").contentType(MediaType.APPLICATION_JSON).content("{\n" +
                 "\t\"departmentName\":\"IT\",\n" +
                 "\t\"departmentCode\":\"IT-06\"\n" +
                 "}")).andExpect(status().isOk());
     }
+
 
     @Test
     void fetchDepartmentByID() throws Exception {

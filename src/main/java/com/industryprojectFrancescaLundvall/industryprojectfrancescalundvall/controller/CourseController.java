@@ -15,38 +15,38 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @PostMapping("/courses")
+    @PostMapping("/saveCourse")
     public Course saveCourse(@Valid @RequestBody Course course){
         return courseService.saveCourse(course);
     }
 
-    @DeleteMapping("/courses/{id}")
+    @DeleteMapping("/deleteCourse/{id}")
     public String deleteCourseById(@PathVariable("id") Long courseId){
         courseService.deleteCourseById(courseId);
         return "Course " +courseId + "has been deleted";
     }
 
-    @PutMapping("/courses/{id}")
+    @PutMapping("/updateCourse/{id}")
     public Course updateCourse(@PathVariable("id") Long courseId, @RequestBody Course course){
         return courseService.updateCourse(courseId, course);
     }
 
-    @GetMapping("/courses")
+    @GetMapping("/getCourse")
     public List<Course> fetchCourseList(){
         return courseService.fetchCourseList();
     }
 
-    @GetMapping("/courses/{id}")
+    @GetMapping("/getCourse/{id}")
     public Course fetchCourseById(@PathVariable("id") Long courseId) throws CourseNotFoundException {
         return courseService.fetchCourseById(courseId);
     }
 
-    @GetMapping("/courses/name/{name}")
+    @GetMapping("/getCourse/name/{name}")
     public Course fetchCourseByName(@PathVariable("name") String courseName){
         return courseService.fetchCourseByName(courseName);
     }
 
-    @GetMapping("/courses/code/{code}")
+    @GetMapping("/getCourse/code/{code}")
     public Course fetchCourseByCourseCode(@PathVariable("code") String courseCode){
         return courseService.fetchCourseByCourseCode(courseCode);
     }

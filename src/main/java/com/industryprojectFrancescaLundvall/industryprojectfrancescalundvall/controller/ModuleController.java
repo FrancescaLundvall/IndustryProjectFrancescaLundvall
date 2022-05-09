@@ -14,33 +14,33 @@ public class ModuleController {
     @Autowired
     private ModuleService moduleService;
 
-    @PostMapping("/modules")
+    @PostMapping("/saveModule")
     public Module saveModule(@Valid @RequestBody Module module){
         return moduleService.saveModule(module);
     }
 
-    @DeleteMapping("/modules/{id}")
+    @DeleteMapping("/deleteModule/{id}")
     public String deleteModuleById(@PathVariable("id") Long moduleId){
         moduleService.deleteModuleById(moduleId);
         return "Module " + moduleId + "has been deleted";
     }
 
-    @PutMapping("/modules/{id}")
+    @PutMapping("/updateModule/{id}")
     public Module updateModule(@PathVariable("id") Long moduleId, @RequestBody Module module){
         return moduleService.updateModule(moduleId, module);
     }
 
-    @GetMapping("/modules/{id}")
+    @GetMapping("/getModule/{id}")
     public Module fetchModuleByID(@PathVariable("id") Long moduleId) throws ModuleNotFoundException {
         return moduleService.fetchModuleById(moduleId);
     }
 
-    @GetMapping("/modules")
+    @GetMapping("/getModule")
     public List<Module> fetchModuleList(){
         return moduleService.fetchModuleList();
     }
 
-    @GetMapping("modules/name/{name}")
+    @GetMapping("getModule/name/{name}")
     public Module fetchModuleByName(@PathVariable("name") String moduleName){
         return moduleService.fetchModuleByName(moduleName);
     }

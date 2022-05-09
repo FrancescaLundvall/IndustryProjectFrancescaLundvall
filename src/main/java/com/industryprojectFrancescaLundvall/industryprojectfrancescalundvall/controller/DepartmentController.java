@@ -15,33 +15,33 @@ public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
 
-    @PostMapping("/departments")
+    @PostMapping("/saveDepartment")
     public Department saveDepartment(@Valid @RequestBody Department department){
             return departmentService.saveDepartment(department);
     }
 
-    @DeleteMapping("/departments/{id}")
+    @DeleteMapping("/deleteDepartment/{id}")
     public String deleteDepartmentById(@PathVariable("id") Long departmentId){
         departmentService.deleteDepartmentById(departmentId);
         return "Department " + departmentId + "has been deleted";
     }
 
-    @PutMapping("/departments/{id}")
+    @PutMapping("/updateDepartment/{id}")
     public Department updateDepartment(@PathVariable("id") Long departmentId, @RequestBody Department department){
         return departmentService.updateDepartment(departmentId, department);
     }
 
-    @GetMapping("/departments")
+    @GetMapping("/getDepartment")
     public List<Department> fetchDepartmentList(){
         return departmentService.fetchDepartmentList();
     }
 
-    @GetMapping("/departments/{id}")
+    @GetMapping("/getDepartment/{id}")
     public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DeptNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
 
-    @GetMapping("/departments/name/{name}")
+    @GetMapping("/getDepartment/name/{name}")
     public Department fetchDepartmentByName(@PathVariable("name") String departmentName){
 
         return departmentService.fetchDepartmentByName(departmentName);

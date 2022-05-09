@@ -1,0 +1,34 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><body>
+
+<h2>Add Staff</h2>
+
+<form action = "#" method="post" th:action ="@{/saveStaff}" th:object = "${staff}" autocomplete="off">
+    <fieldset>
+        <legend>Staff</legend>
+    <label for="firstName">First name:</label><br>
+    <input type="text" th:field ="*{firstName}" class="form-control" id="firstName" name="firstName"><br><br>
+    <label for="lastName">Last name:</label><br>
+    <input type="text" th:field ="*{lastName}" class="form-control" id="lastName" name="lastname"><br><br>
+    <label for="staffEmail">Staff email:</label><br>
+    <input type="staffEmail" th:field ="*{staffEmail}" class="form-control" id="staffEmail" name="staffEmail"> <br><br>
+    <label for="address">Address</label><br>
+    <input type="text" th:field ="*{address}" class="form-control" id="address" name="address"><br><br>
+    <label for="contactNumber"> Contact number</label><br>
+    <input type="text" th:field ="*{contactNumber}" class="form-control" id="contactNumber" name="contactNumber"><br><br>
+    <label for="gender">Gender:</label>
+    <select th:field ="*{gender}" class="form-control" id="gender" name="gender">
+        <option value="f">F</option>
+        <option value="m">M</option>
+    </select><br><br>
+    <label for="departmentId"> Department Id</label><br>
+    <input type="number" th:field ="*{departmentId}" class="form-control" id="departmentId" name="departmentId"><br><br>
+
+    <input type="submit" value="Submit">
+        <input type="reset">
+    </fieldset>
+</form>
+
+
+
+</body>

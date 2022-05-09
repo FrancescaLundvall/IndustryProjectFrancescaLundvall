@@ -54,10 +54,6 @@ public class StudentServiceImpl implements StudentService{
             oldStudent.setLastName(student.getLastName());
         }
 
-        if(Objects.nonNull(student.getDOB()) && !"".equalsIgnoreCase(student.getDOB())){
-            oldStudent.setDOB(student.getDOB());
-        }
-
         if(Objects.nonNull(student.getAddress()) && !"".equalsIgnoreCase(student.getAddress())){
             oldStudent.setAddress(student.getAddress());
         }
@@ -71,7 +67,17 @@ public class StudentServiceImpl implements StudentService{
     }
 
     @Override
-    public Student fetchStudentByFirstName(String firstName) {
-        return null;
+    public Student findByFirstName(String firstName) {
+        return studentRepository.findByFirstName(firstName);
+    }
+
+   // @Override
+    //public List<Student> findByCourseId(Long courseId) {
+    //    return studentRepository.findByCourseId(courseId);
+ //  }
+
+    @Override
+    public Student findByFirstNameAndLastName(String firstName, String lastName) {
+        return studentRepository.findByFirstNameAndLastName(firstName, lastName);
     }
 }
