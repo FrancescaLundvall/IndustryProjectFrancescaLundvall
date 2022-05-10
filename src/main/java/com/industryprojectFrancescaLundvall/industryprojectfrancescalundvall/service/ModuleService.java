@@ -14,6 +14,10 @@ public interface ModuleService {
 
     public List<Module> fetchModuleList();
 
+    List<Module> fetchByStaffId(Long staffId);
+
+    List<Module> fetchByCourseId(Long courseId);
+
     public Module fetchModuleByName (String moduleName);
 
     public Module fetchModuleById(Long moduleId) throws ModuleNotFoundException;

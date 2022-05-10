@@ -43,6 +43,16 @@ public class ModuleServiceImpl implements ModuleService{
     }
 
     @Override
+    public List<Module> fetchByStaffId(Long staffId) {
+        return moduleRepository.findByStaffId(staffId);
+    }
+
+    @Override
+    public List<Module> fetchByCourseId(Long courseId) {
+        return moduleRepository.findByCourseId(courseId);
+    }
+
+    @Override
     public Module fetchModuleByName(String moduleName) {
         return moduleRepository.findModuleByModuleNameIgnoreCase(moduleName);
     }

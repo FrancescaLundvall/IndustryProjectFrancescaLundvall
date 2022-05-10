@@ -61,11 +61,24 @@ public class StaffServiceImpl implements StaffService{
         if(Objects.nonNull(staff.getContactNumber()) && !"".equalsIgnoreCase(staff.getContactNumber())){
             oldStaff.setContactNumber(staff.getContactNumber());
         }
+
+        if(Objects.nonNull(staff.getDepartmentId())){
+            oldStaff.setDepartmentId(staff.getDepartmentId());
+        }
+
+        if(Objects.nonNull(staff.getGender())){
+            oldStaff.setGender(staff.getGender());
+        }
         return staffRepository.save(oldStaff);
     }
 
     @Override
     public Staff findByFirstNameAndLastName(String firstName, String lastName) {
         return staffRepository.findByFirstNameAndLastName(firstName, lastName);
+    }
+
+    @Override
+    public List<Staff> fetchByDepartmentId(Long departmentId) {
+        return staffRepository.findByDepartmentId(departmentId);
     }
 }

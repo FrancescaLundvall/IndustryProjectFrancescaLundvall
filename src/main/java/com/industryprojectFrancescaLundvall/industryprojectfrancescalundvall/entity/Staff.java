@@ -27,7 +27,6 @@ public class Staff {
     private String firstName;
     private String lastName;
     private String staffEmail;
-    //@ManyToOne(targetEntity = Department.class)
     private Long departmentId;
     private String address;
     private String contactNumber;

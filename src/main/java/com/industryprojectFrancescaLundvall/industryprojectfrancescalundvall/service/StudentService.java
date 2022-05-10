@@ -10,13 +10,13 @@ public interface StudentService {
 
     public List<Student> fetchStudentList();
 
+    List<Student> fetchByCourseId(Long courseId);
+
     public Student fetchStudentById(Long studentId) throws StudentNotFoundException;
 
     public void deleteStudentById(Long studentId);
 
     public Student updateStudent(Long studentID, Student student);
 
-    public Student findByFirstName(String firstName);
-
-     Student findByFirstNameAndLastName(String firstName, String lastName);
+    Student findByFirstNameAndLastName(String firstName, String lastName);
 }

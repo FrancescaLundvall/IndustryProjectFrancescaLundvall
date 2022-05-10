@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 
 <html xmlns:th="https://www.thymeleaf.org">
 
 <h2>Add Course</h2>
 
-<form method="post" th:action ="@{/saveCourse}" th:object = "${course}">
+<form method="post" th:action ="@{/courses/save}" th:object = "${course}">
     <fieldset>
-        <legend>Staff</legend>
+        <legend>Course</legend>
         <label for="courseName">Course name:</label><br>
         <input type="text" th:field ="*{courseName}" class="form-control" id="courseName" name="courseName"><br><br>
         <label for="courseCode">Course code:</label><br>

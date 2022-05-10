@@ -27,6 +27,7 @@ import java.util.List;
         private Long courseId;
         private String courseName;
         private String courseCode;
+        private Long departmentId;
         /*@ManyToOne( targetEntity = Department.class,
                 fetch = FetchType.LAZY)
        /* @JoinTable(
@@ -34,7 +35,7 @@ import java.util.List;
                 joinColumns = {@JoinColumn(name = "department_id")},
                 inverseJoinColumns = {@JoinColumn(name = "course_id")}
         )*/
-        private Long departmentId;
+
 
         /*@OneToMany(mappedBy = "courseId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
         private List<Student> students;

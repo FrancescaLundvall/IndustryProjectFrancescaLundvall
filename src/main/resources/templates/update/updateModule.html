@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+<h2>Update Module</h2>
+
+<form method="put" th:action ="@{/modules/update}" th:object = "${module}">
+  <fieldset>
+    <legend>Module</legend>
+    <label for="moduleId">Module ID:</label><br>
+    <input type="text" th:field ="*{moduleId}" class="form-control" id="moduleId" name="moduleId"><br><br>
+    <label for="moduleName">Module name:</label><br>
+    <input type="text" th:field ="*{moduleName}" class="form-control" id="moduleName" name="moduleName"><br><br>
+    <label for="moduleCode">Module code:</label><br>
+    <input type="text" th:field ="*{moduleCode}" class="form-control" id="moduleCode" name="moduleCode"><br><br>
+    <label for="staffId">Staff Id:</label><br>
+    <input type="text" th:field ="*{staffId}" class="form-control" id="staffId" name="staffId"><br><br>
+    <label for="courseId"> Course Id</label><br>
+    <input type="number" th:field ="*{courseId}" class="form-control" id="courseId" name="courseId"><br><br>
+    <input type="submit" value="Submit">
+    <input type="reset">
+  </fieldset>
+</form>
+</body>
+</html>

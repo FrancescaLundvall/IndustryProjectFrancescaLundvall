@@ -27,6 +27,11 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> fetchByCourseId(Long courseId) {
+        return studentRepository.findByCourseId(courseId);
+    }
+
+    @Override
     public Student fetchStudentById(Long studentId) throws StudentNotFoundException {
         Optional<Student> student = studentRepository.findById(studentId);
         if (!student.isPresent()) {
@@ -60,11 +65,6 @@ public class StudentServiceImpl implements StudentService {
             oldStudent.setContactNumber(student.getContactNumber());
         }
         return studentRepository.save(oldStudent);
-    }
-
-    @Override
-    public Student findByFirstName(String firstName) {
-        return studentRepository.findByFirstName(firstName);
     }
 
     @Override
