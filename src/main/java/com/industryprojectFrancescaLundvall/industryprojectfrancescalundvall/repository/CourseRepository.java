@@ -10,6 +10,7 @@ import java.util.List;
 
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
+    List<Course> findByDepartmentId(Long departmentId);
 
     Course findByCourseNameIgnoreCase(String courseName);
 

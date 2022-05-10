@@ -20,4 +20,6 @@ public interface CourseService{
     public Course fetchCourseByName(String courseName);
 
     Course fetchCourseByCourseCode(String courseCode);
+
+    List<Course> findByDepartmentId(Long departmentId);
 }

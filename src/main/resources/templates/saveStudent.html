@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
+
+<h2>Add Student</h2>
+
+<form method="post" th:action ="@{/saveStudent}" th:object = "${student}">
+    <fieldset>
+        <legend>Student</legend>
+        <label for="firstName">First name:</label><br>
+        <input type="text" th:field ="*{firstName}" class="form-control" id="firstName" name="firstName"><br><br>
+        <label for="lastName">Last name:</label><br>
+        <input type="text" th:field ="*{lastName}" class="form-control" id="lastName" name="lastname"><br><br>
+        <label for="studentEmail">Student email:</label><br>
+        <input type="studentEmail" th:field ="*{studentEmail}" class="form-control" id="studentEmail" name="studentEmail"> <br><br>
+        <label for="address">Address</label><br>
+        <input type="text" th:field ="*{address}" class="form-control" id="address" name="address"><br><br>
+        <label for="contactNumber"> Contact number</label><br>
+        <input type="text" th:field ="*{contactNumber}" class="form-control" id="contactNumber" name="contactNumber"><br><br>
+        <label for="gender">Gender:</label>
+        <select th:field ="*{gender}" class="form-control" id="gender" name="gender">
+            <option value="f">F</option>
+            <option value="m">M</option>
+        </select><br><br>
+        <label for="courseId"> Course Id</label><br>
+        <input type="number" th:field ="*{courseId}" class="form-control" id="courseId" name="courseId"><br><br>
+
+        <input type="submit" value="Submit">
+        <input type="reset">
+    </fieldset>
+</form>
+</body>
+</html>

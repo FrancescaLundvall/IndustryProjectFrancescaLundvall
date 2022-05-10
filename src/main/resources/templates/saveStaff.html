@@ -1,9 +1,11 @@
-<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"><body>
+
+<!DOCTYPE html>
+
+<html xmlns:th="https://www.thymeleaf.org">
 
 <h2>Add Staff</h2>
 
-<form action = "#" method="post" th:action ="@{/saveStaff}" th:object = "${staff}" autocomplete="off">
+<form method="post" th:action ="@{/saveStaff}" th:object = "${staff}">
     <fieldset>
         <legend>Staff</legend>
     <label for="firstName">First name:</label><br>
@@ -28,7 +30,5 @@
         <input type="reset">
     </fieldset>
 </form>
-
-
-
 </body>
+</html>

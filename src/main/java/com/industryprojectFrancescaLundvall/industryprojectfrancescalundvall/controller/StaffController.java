@@ -2,12 +2,11 @@ package com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.co
 
 import com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.entity.Staff;
 import com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.exception.StaffNotFoundException;
+import com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.repository.StaffRepository;
 import com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -16,12 +15,10 @@ public class StaffController {
     @Autowired
     private StaffService staffService;
 
-
-    @PostMapping("/saveStaff")
-    public Staff saveStaff(@Valid @RequestBody Staff staff){
+    @PostMapping(value = "/saveStaff")
+    public Staff saveStaff(Staff staff) {
         return staffService.saveStaff(staff);
     }
-
 
     @GetMapping("/getStaff")
     public List<Staff> fetchStaffList(){

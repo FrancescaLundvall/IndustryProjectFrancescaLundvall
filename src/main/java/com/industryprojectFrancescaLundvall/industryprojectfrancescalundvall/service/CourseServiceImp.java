@@ -61,4 +61,9 @@ public class CourseServiceImp implements CourseService{
     public Course fetchCourseByCourseCode(String courseCode) {
         return courseRepository.findByCourseCodeIgnoreCase(courseCode);
     }
+
+    @Override
+    public List<Course> findByDepartmentId(Long departmentId) {
+        return courseRepository.findByDepartmentId(departmentId);
+    }
 }

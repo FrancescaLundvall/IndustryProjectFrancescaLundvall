@@ -26,7 +26,7 @@ import java.util.Date;
 public class Student {
 
     @Id
-    /*@SequenceGenerator(
+    @SequenceGenerator(
             name = "STUDENT_SEQ",
             sequenceName = "STUDENT_SEQ",
             allocationSize = 1
@@ -35,8 +35,7 @@ public class Student {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "STUDENT_SEQ"
-    )*/
-    @GeneratedValue
+    )
     private Long studentId;
     private String firstName;
     private String lastName;
@@ -44,5 +43,6 @@ public class Student {
     private String address;
     private String contactNumber;
     private char gender;
+    //@ManyToOne(targetEntity = Course.class)
     private Long courseId;
 }

@@ -50,4 +50,9 @@ public class CourseController {
     public Course fetchCourseByCourseCode(@PathVariable("code") String courseCode){
         return courseService.fetchCourseByCourseCode(courseCode);
     }
+
+    @GetMapping("/getCourse/departmentID/{departmentId}")
+    public List<Course> findByDepartmentId(@PathVariable("departmentId") Long departmentId){
+        return courseService.findByDepartmentId(departmentId);
+    }
 }

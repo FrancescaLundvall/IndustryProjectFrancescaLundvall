@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -16,7 +17,7 @@ import javax.persistence.*;
 public class Department {
 
     @Id
-   /* @SequenceGenerator(
+   @SequenceGenerator(
             name = "DEPT_SEQ",
             sequenceName = "DEPT_SEQ",
             allocationSize = 1
@@ -24,10 +25,20 @@ public class Department {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "DEPT_SEQ"
-    )*/
-    @GeneratedValue
+    )
     private Long departmentId;
     private String departmentName;
     private String departmentCode;
 
+ //   @OneToMany(mappedBy = "departmentId",  fetch = FetchType.LAZY,            cascade = CascadeType.ALL)
+   /* @JoinTable(
+            name = "course_department_map",
+            joinColumns = {@JoinColumn(name = "course_id")},
+            inverseJoinColumns = {@JoinColumn(name = "department_id")}
+    )
+    private List<Course> courses;
+
+    @OneToMany(mappedBy = "departmentId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Staff> staff;
+*/
 }

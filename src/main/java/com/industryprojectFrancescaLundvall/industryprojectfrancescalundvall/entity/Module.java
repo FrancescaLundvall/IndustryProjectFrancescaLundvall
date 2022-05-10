@@ -16,7 +16,7 @@ import javax.persistence.*;
 public class Module {
 
     @Id
-    /*@SequenceGenerator(
+    @SequenceGenerator(
             name = "MODULE_SEQ",
             sequenceName = "MODULE_SEQ",
             allocationSize = 1
@@ -24,13 +24,14 @@ public class Module {
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "MODULE_SEQ"
-    )*/
-    @GeneratedValue
+    )
     private Long moduleId;
     private String moduleName;
     private int EctCredits;
 
+   // @ManyToOne(targetEntity = Staff.class)
     private Long staffId;
+    //@ManyToOne(targetEntity = Course.class)
     private Long courseId;
 
 }
