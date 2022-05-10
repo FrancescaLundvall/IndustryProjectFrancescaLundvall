@@ -13,7 +13,6 @@ import java.util.List;
 @Builder
 @ToString
 public class Department {
-
     @Id
    @SequenceGenerator(
             name = "DEPT_SEQ",
@@ -27,16 +26,4 @@ public class Department {
     private Long departmentId;
     private String departmentName;
     private String departmentCode;
-
- //   @OneToMany(mappedBy = "departmentId",  fetch = FetchType.LAZY,            cascade = CascadeType.ALL)
-   /* @JoinTable(
-            name = "course_department_map",
-            joinColumns = {@JoinColumn(name = "course_id")},
-            inverseJoinColumns = {@JoinColumn(name = "department_id")}
-    )
-    private List<Course> courses;
-
-    @OneToMany(mappedBy = "departmentId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    private List<Staff> staff;
-*/
 }

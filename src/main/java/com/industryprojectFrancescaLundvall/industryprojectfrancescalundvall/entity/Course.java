@@ -12,8 +12,6 @@ import java.util.List;
     @Builder
     @ToString
     public class Course {
-
-
         @Id
         @SequenceGenerator(
                 name = "COURSE_SEQ",
@@ -28,22 +26,5 @@ import java.util.List;
         private String courseName;
         private String courseCode;
         private Long departmentId;
-        /*@ManyToOne( targetEntity = Department.class,
-                fetch = FetchType.LAZY)
-       /* @JoinTable(
-                name = "course_department_map",
-                joinColumns = {@JoinColumn(name = "department_id")},
-                inverseJoinColumns = {@JoinColumn(name = "course_id")}
-        )*/
-
-
-        /*@OneToMany(mappedBy = "courseId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-        private List<Student> students;
-
-        @OneToMany(mappedBy = "courseId", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-        private List<Module> modules;
-        */
-
-
 
     }

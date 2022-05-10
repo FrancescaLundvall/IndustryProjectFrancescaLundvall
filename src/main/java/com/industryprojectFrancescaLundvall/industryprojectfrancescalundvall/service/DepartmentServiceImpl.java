@@ -24,6 +24,8 @@ public class DepartmentServiceImpl implements DepartmentService {
     @Override
     public void deleteDepartmentById(Long deptId) {departmentRepository.deleteById(deptId);}
 
+    //Checks that user input is not null.
+    // If it is null, assumption is that that field is not being updated and therefore no change is made
     @Override
     public Department updateDepartment(Long deptId, Department department) {
         Department currentDept = departmentRepository.findById(deptId).get();

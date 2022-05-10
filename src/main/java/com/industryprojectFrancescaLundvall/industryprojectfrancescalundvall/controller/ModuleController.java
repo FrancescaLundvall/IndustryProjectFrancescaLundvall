@@ -9,9 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+//@RequestMapping maps all HTTPS Module requests to /modules
 @RestController
 @RequestMapping("/modules")
 public class ModuleController {
+
+    //This injects a ModuleService bean from the application context container
     @Autowired
     private ModuleService moduleService;
 
@@ -45,11 +48,13 @@ public class ModuleController {
     public Module fetchModuleByName(@PathVariable("name") String moduleName){
         return moduleService.fetchModuleByName(moduleName);
     }
-
+    //This requests list of all modules which are taught by a particular staff member
     @GetMapping("/display/staffId/{staffId}")
     List<Module> fetchByStaffId(Long staffId){
         return moduleService.fetchByStaffId(staffId);
     }
+
+    //This requests list of all modules which are offered by a particular course
     @GetMapping("/display/courseId/{courseId}")
     List<Module> fetchByCourseId(Long courseId){
         return moduleService.fetchByCourseId(courseId);

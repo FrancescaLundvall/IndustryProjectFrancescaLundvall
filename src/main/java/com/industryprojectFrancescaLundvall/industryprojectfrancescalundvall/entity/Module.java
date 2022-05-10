@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Builder
 @ToString
 public class Module {
-
     @Id
     @SequenceGenerator(
             name = "MODULE_SEQ",
@@ -26,10 +25,7 @@ public class Module {
     private Long moduleId;
     private String moduleName;
     private int EctCredits;
-
-   // @ManyToOne(targetEntity = Staff.class)
     private Long staffId;
-    //@ManyToOne(targetEntity = Course.class)
     private Long courseId;
 
 }

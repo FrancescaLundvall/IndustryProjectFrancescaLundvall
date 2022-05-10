@@ -10,9 +10,13 @@ import java.util.List;
 
 @Repository
 public interface CourseRepository extends JpaRepository<Course, Long> {
+
+    //This displays a list of all courses contained in a particular department
     List<Course> findByDepartmentId(Long departmentId);
 
+    //Search for a course by its name
     Course findByCourseNameIgnoreCase(String courseName);
 
+    //Search for a course by its code
     Course findByCourseCodeIgnoreCase(String courseCode);
 }

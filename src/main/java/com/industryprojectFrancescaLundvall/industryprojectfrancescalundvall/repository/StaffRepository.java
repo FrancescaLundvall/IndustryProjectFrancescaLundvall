@@ -9,8 +9,10 @@ import java.util.List;
 
 @Repository
 public interface StaffRepository extends JpaRepository<Staff, Long> {
+    //Find a particular staff member by their full name
     Staff findByFirstNameAndLastName(String firstName, String lastName);
 
+    //Find a list of all staff who teach in a particular department
     List<Staff> findByDepartmentId(Long departmentId);
 
 }

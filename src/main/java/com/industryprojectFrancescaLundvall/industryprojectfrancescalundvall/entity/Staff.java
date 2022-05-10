@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Builder
 @ToString
 public class Staff {
-
     @Id
     @SequenceGenerator(
             name = "STAFF_SEQ",

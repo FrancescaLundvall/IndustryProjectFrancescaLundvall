@@ -8,10 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
+//@RequestMapping maps all HTTPS Staff requests to /staff
 @RestController
 @RequestMapping("/staff")
 public class StaffController {
 
+    //This injects a StaffService bean from the application context container
     @Autowired
     private StaffService staffService;
 
@@ -49,6 +51,7 @@ public class StaffController {
         return staffService.findByFirstNameAndLastName(firstName, lastName);
     }
 
+    //This requests list of all staff who are in a particular department
     @GetMapping("/display/departmentID/{departmentId}")
     public List<Staff> findByDepartmentId(@PathVariable("departmentId") Long departmentId){
         return staffService.fetchByDepartmentId(departmentId);

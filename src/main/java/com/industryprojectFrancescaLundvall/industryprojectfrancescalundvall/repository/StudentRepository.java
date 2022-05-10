@@ -9,7 +9,10 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Long> {
+
+    //Find a list of all students in a particular course
     List<Student> findByCourseId(Long courseId);
 
+    //Find a particular student by their full name
     Student findByFirstNameAndLastName(String firstName, String lastName);
 }

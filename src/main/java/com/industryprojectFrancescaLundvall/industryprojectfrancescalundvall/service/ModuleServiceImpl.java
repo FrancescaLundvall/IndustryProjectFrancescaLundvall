@@ -23,6 +23,8 @@ public class ModuleServiceImpl implements ModuleService{
     @Override
     public void deleteModuleById(Long moduleId) { moduleRepository.deleteById(moduleId);    }
 
+    //Checks that user input is not null.
+    // If it is null, assumption is that that field is not being updated and therefore no change is made
     @Override
     public Module updateModule(Long moduleId, Module module) {
 

@@ -40,6 +40,8 @@ public class StaffServiceImpl implements StaffService{
         staffRepository.deleteById(staffId);
     }
 
+    //Checks that user input is not null.
+    // If it is null, assumption is that that field is not being updated and therefore no change is made
     @Override
     public Staff updateStaff(Long staffId, Staff staff) {
         Staff oldStaff = staffRepository.findById(staffId).get();

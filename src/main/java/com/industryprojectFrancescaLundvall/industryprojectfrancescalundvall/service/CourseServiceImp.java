@@ -37,6 +37,8 @@ public class CourseServiceImp implements CourseService{
     @Override
     public void deleteCourseById(Long courseId) {courseRepository.deleteById(courseId);}
 
+    //Checks that user input is not null.
+    // If it is null, assumption is that that field is not being updated and therefore no change is made
     @Override
     public Course updateCourse(Long courseId, Course course) {
         Course oldCourse = courseRepository.findById(courseId).get();

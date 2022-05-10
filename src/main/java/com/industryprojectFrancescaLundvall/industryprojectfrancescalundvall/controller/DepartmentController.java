@@ -8,11 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
-
+//@RequestMapping maps all HTTPS Department requests to /departments
 @RestController
 @RequestMapping("/departments")
 public class DepartmentController {
 
+
+    //This injects a DepartmentService bean from the application context container
     @Autowired
     private DepartmentService departmentService;
 

@@ -12,10 +12,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+//@RequestMapping maps all HTTPS Course requests to /courses
 @RestController
 @RequestMapping("/courses")
 public class CourseController {
 
+
+    //This injects a CourseService bean from the application context container
     @Autowired
     private CourseService courseService;
 
@@ -55,6 +58,7 @@ public class CourseController {
         return courseService.fetchCourseByCourseCode(courseCode);
     }
 
+    //This requests a list of all courses contained in a particular department
     @GetMapping("/display/departmentID/{departmentId}")
     public List<Course> findByDepartmentId(@PathVariable("departmentId") Long departmentId){
         return courseService.findByDepartmentId(departmentId);

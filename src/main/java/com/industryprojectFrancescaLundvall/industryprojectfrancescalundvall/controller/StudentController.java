@@ -11,10 +11,12 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
+//@RequestMapping maps all HTTPS Students requests to /students
 @RestController
 @RequestMapping("/students")
 public class StudentController {
 
+    //This injects a StudentService bean from the application context container
     @Autowired
     private StudentService studentService;
 
@@ -55,6 +57,7 @@ public class StudentController {
         return studentService.findByFirstNameAndLastName(firstName, lastName);
     }
 
+    //This requests list of all students who are in a particular course
     @GetMapping("/display/courseId/{courseId}")
     List<Student> fetchByCourseId(Long courseId){
         return studentService.fetchByCourseId(courseId);

@@ -40,6 +40,8 @@ public class StudentServiceImpl implements StudentService {
         return student.get();
     }
 
+    //Checks that user input is not null.
+    // If it is null, assumption is that that field is not being updated and therefore no change is made
     @Override
     public void deleteStudentById(Long studentId) {
         studentRepository.deleteById(studentId);
@@ -67,7 +69,7 @@ public class StudentServiceImpl implements StudentService {
         return studentRepository.save(oldStudent);
     }
 
-    @Override
+       @Override
     public Student findByFirstNameAndLastName(String firstName, String lastName) {
             return studentRepository.findByFirstNameAndLastName(firstName, lastName);
     }

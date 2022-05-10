@@ -11,7 +11,6 @@ import javax.persistence.*;
 @Builder
 @ToString
 public class Student {
-
     @Id
     @SequenceGenerator(
             name = "STUDENT_SEQ",
