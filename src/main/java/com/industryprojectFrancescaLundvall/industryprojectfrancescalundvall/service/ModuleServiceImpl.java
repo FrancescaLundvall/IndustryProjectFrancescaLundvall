@@ -34,9 +34,6 @@ public class ModuleServiceImpl implements ModuleService{
         if (Objects.nonNull(module.getEctCredits()))
         { updatedModule.setEctCredits(module.getEctCredits());}
 
-       // if (Objects.nonNull(module.getStaff()))
-        //{ updatedModule.setStaff(module.getStaff());}
-
         return moduleRepository.save(updatedModule);
     }
 

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class StaffServiceImpl implements StaffService{
@@ -27,7 +28,11 @@ public class StaffServiceImpl implements StaffService{
 
     @Override
     public Staff fetchStaffById(Long staffId) throws StaffNotFoundException {
-        return null;
+        Optional<Staff> staff = staffRepository.findById(staffId);
+        if(!staff.isPresent()){
+            throw new StaffNotFoundException("Staff not found");
+        }
+        return staff.get();
     }
 
     @Override
@@ -56,11 +61,6 @@ public class StaffServiceImpl implements StaffService{
         if(Objects.nonNull(staff.getContactNumber()) && !"".equalsIgnoreCase(staff.getContactNumber())){
             oldStaff.setContactNumber(staff.getContactNumber());
         }
-
-       // if(Objects.nonNull(staff.getDepartment())){
-         //   oldStaff.setDepartment(staff.getDepartment());
-        //}
-
         return staffRepository.save(oldStaff);
     }
 

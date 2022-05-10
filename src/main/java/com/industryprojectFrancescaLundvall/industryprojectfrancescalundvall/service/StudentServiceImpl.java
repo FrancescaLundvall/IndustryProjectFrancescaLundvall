@@ -11,7 +11,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class StudentServiceImpl implements StudentService{
+public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentRepository studentRepository;
@@ -29,41 +29,37 @@ public class StudentServiceImpl implements StudentService{
     @Override
     public Student fetchStudentById(Long studentId) throws StudentNotFoundException {
         Optional<Student> student = studentRepository.findById(studentId);
-        if (!student.isPresent()){
+        if (!student.isPresent()) {
             throw new StudentNotFoundException("Student not found");
         }
         return student.get();
     }
 
     @Override
-    public void deleteStudentById(Long studentId) {studentRepository.deleteById(studentId);
-
+    public void deleteStudentById(Long studentId) {
+        studentRepository.deleteById(studentId);
     }
 
     @Override
     public Student updateStudent(Long studentID, Student student) {
         Student oldStudent = studentRepository.findById(studentID).get();
 
-        if(Objects.nonNull(student.getStudentEmail()) && !"".equalsIgnoreCase(student.getStudentEmail())){
+        if (Objects.nonNull(student.getStudentEmail()) && !"".equalsIgnoreCase(student.getStudentEmail())) {
             oldStudent.setStudentEmail(student.getStudentEmail());
         }
-        if(Objects.nonNull(student.getFirstName()) && !"".equalsIgnoreCase(student.getFirstName())){
+        if (Objects.nonNull(student.getFirstName()) && !"".equalsIgnoreCase(student.getFirstName())) {
             oldStudent.setFirstName(student.getFirstName());
         }
-        if(Objects.nonNull(student.getLastName()) && !"".equalsIgnoreCase(student.getLastName())){
+        if (Objects.nonNull(student.getLastName()) && !"".equalsIgnoreCase(student.getLastName())) {
             oldStudent.setLastName(student.getLastName());
         }
-
-        if(Objects.nonNull(student.getAddress()) && !"".equalsIgnoreCase(student.getAddress())){
+        if (Objects.nonNull(student.getAddress()) && !"".equalsIgnoreCase(student.getAddress())) {
             oldStudent.setAddress(student.getAddress());
         }
-
-        if(Objects.nonNull(student.getContactNumber()) && !"".equalsIgnoreCase(student.getContactNumber())){
+        if (Objects.nonNull(student.getContactNumber()) && !"".equalsIgnoreCase(student.getContactNumber())) {
             oldStudent.setContactNumber(student.getContactNumber());
         }
-
         return studentRepository.save(oldStudent);
-
     }
 
     @Override
@@ -71,13 +67,9 @@ public class StudentServiceImpl implements StudentService{
         return studentRepository.findByFirstName(firstName);
     }
 
-   // @Override
-    //public List<Student> findByCourseId(Long courseId) {
-    //    return studentRepository.findByCourseId(courseId);
- //  }
-
     @Override
     public Student findByFirstNameAndLastName(String firstName, String lastName) {
-        return studentRepository.findByFirstNameAndLastName(firstName, lastName);
+            return studentRepository.findByFirstNameAndLastName(firstName, lastName);
     }
+
 }

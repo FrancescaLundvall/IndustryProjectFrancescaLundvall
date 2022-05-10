@@ -1,28 +1,15 @@
 package com.industryprojectFrancescaLundvall.industryprojectfrancescalundvall.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.*;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-/*@Table(
-        name = "students",
-
-        //means every email must be unique
-        uniqueConstraints = @UniqueConstraint(
-                name = "emailId_unique",
-                columnNames = "email_address"
-        )
-)*/
+@ToString
 public class Student {
 
     @Id
@@ -43,6 +30,5 @@ public class Student {
     private String address;
     private String contactNumber;
     private char gender;
-    //@ManyToOne(targetEntity = Course.class)
     private Long courseId;
 }
